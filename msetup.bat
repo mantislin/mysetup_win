@@ -56,20 +56,15 @@ if exist "%program86% (
 :: -- ==========================================================================
 :: -- symbol links of normal points
 
+call mymklink /j /f "%appdata%\PotPlayerMini\Capture" "%pics%\Capture_PotPlayerMini"
+call mymklink /j /f "%appdata%\弹弹play\Screenshots" "D:\uData\pictures\Captures"
 call mymklink /j /f "%systemdrive%\CloudMusic" "D:\music\CloudMusic"
+call mymklink /j /f /r "%appdata%\SPlayer\SVPSub" "D:\tdd\subs"
+call mymklink /j /f /r "%appdata%\XMusic\XMusicCache\lrc" "D:\music\lyrics"
+call mymklink /j /f /r "%docus%\XMusic" "D:\music\xiami"
+call mymklink /j /f /r "%systemdrive%\BiZhi" "D:\tdd\soft\win\upupoo\dynamic-wallpapers"
 call mymklink /j /f /r "D:\tdd\Downloads\Complete Youtube Saver\rensai" "U:\tdd\ani\rensai"
-if exist "%appdata%\SPlayer\SVPSub" if exist "D:\tdd\subs" (
-    call mymklink /j /f /r "%appdata%\SPlayer\SVPSub" "D:\tdd\subs"
-)
-if exist "%appdata%\XMusic\XMusicCache\lrc" if exist "D:\music\lyrics" (
-    call mymklink /j /f /r "%appdata%\XMusic\XMusicCache\lrc" "D:\music\lyrics"
-)
-if exist "%appdata%\弹弹play" if exist "D:\uData\pictures\Captures" (
-    call mymklink /j /f "%appdata%\弹弹play\Screenshots" "D:\uData\pictures\Captures"
-)
-if exist "D:\tdd\soft\win\upupoo\dynamic-wallpapers" (
-    call mymklink /j /f /r "%systemdrive%\BiZhi" "D:\tdd\soft\win\upupoo\dynamic-wallpapers"
-)
+call mymklink /j /f /s "%lab%\batch" "%github%\batch"
 
 :: -- ==========================================================================
 :: -- settings
