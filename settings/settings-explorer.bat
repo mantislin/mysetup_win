@@ -72,6 +72,14 @@ call admrun reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion
 ::  0 | 1   1
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "shutdownwithoutlogon" /t REG_DWORD /d 1 /f
 
+:: -- Enable or Disable People Bar on Taskbar for All Users
+::  Range   Default value
+::  0 | 1   0
+::  0 = Enable
+::  1 = Disable
+call admrun reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer" /v "HidePeopleBar" /t REG_DWORD /d 1 /f
+call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v "HidePeopleBar" /t REG_DWORD /d 1 /f
+
 :: -- Do not display the lock screen
 ::  Range   Default value
 ::  0 | 1   0

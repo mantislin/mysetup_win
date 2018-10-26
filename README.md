@@ -4,10 +4,9 @@ done).Hide Navigation Panel
 ).admrun faiiled with paths with space character
 ).Power Shell settings
 ).region and language settings
-).Show Cortana as an icon
 ).Disable "Store my activity history on this device"
 ).Edge black theme
-).Dont show people in taskbar
+done).Dont show people in taskbar
 ).Use small icon in taskbar
 ).Power plan settings
 ).Time displaying format
