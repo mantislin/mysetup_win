@@ -43,18 +43,25 @@ call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion
 call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "LaunchTo" /t REG_DWORD /d 1 /f
 :: -- Stop appending " - Shortcut" to Shortcut file names
 call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "link" /t REG_BINARY /d 0 /f
+:: -- To Show or Hide Search Box or Cortana Icon on Taskbar
+::  Range   Default value
+::  0|1|2   2
+::  0 = Hidden
+::  1 = Show Cortana icon
+::  2 = Show search box
+call admrun reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v "SearchboxTaskbarMode" /t REG_DWORD /d 1 /f
 :::: -- Removes Shut Down from the Start menu and disabvles the Shut Down button in the Windows Security dialog box.
 ::::  Range   Default value
 ::::  0 | 1   0
 ::call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoClose" /t REG_DWORD /d 0 /f
-:: -- Do not display the lock screen
-::  Range   Default value
-::  0 | 1   0
-call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization" /v "NoLockScreen" /t REG_DWORD /d 0 /f
 :: -- Allow system to be shut down without having to log on
 ::  Range   Default value
 ::  0 | 1   1
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "shutdownwithoutlogon" /t REG_DWORD /d 1 /f
+:: -- Do not display the lock screen
+::  Range   Default value
+::  0 | 1   0
+call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization" /v "NoLockScreen" /t REG_DWORD /d 0 /f
 :: -- Disable Navigation Pane
 ::  win7off     PageSpaceControlSizer    REG_BINARY    c80000000000000000000000d7030000
 ::  win7on      PageSpaceControlSizer    REG_BINARY    c80000000100000000000000d7030000

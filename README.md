@@ -1,5 +1,5 @@
 # mysetup_win
-).Show Cortana as an Icon
+done).Show Cortana as an Icon
 done).Hide Navigation Panel
 ).admrun faiiled with paths with space character
 ).Power Shell settings
