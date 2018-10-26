@@ -30,6 +30,7 @@ if exist "%userprofile%\_cmdrc.bat" (
     call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Command Processor" /v "AutoRun" /t REG_SZ /d "%userprofile%\_cmdrc.bat" /f
 )
 
+
 :: -- ==========================================================================
 :: -- symbol links of special points
 
@@ -53,6 +54,7 @@ if exist "%program86% (
     if exist "%programfiles86%" call mymklink /j /f /s "%programfiles86%" "%program86%"
 )
 
+
 :: -- ==========================================================================
 :: -- symbol links of normal points
 
@@ -66,6 +68,7 @@ call mymklink /j /f /r "%systemdrive%\BiZhi" "D:\tdd\soft\win\upupoo\dynamic-wal
 call mymklink /j /f /r "D:\tdd\Downloads\Complete Youtube Saver\rensai" "U:\tdd\ani\rensai"
 call mymklink /j /f /s "%lab%\batch" "%github%\batch"
 
+
 :: -- ==========================================================================
 :: -- settings
 
@@ -73,41 +76,50 @@ call mymklink /j /f /s "%lab%\batch" "%github%\batch"
 :: - ==============================
 if exist "%~dp0settings\settings-keyboard.bat" call "%~dp0settings\settings-keyboard.bat"
 
+
 :: - Windows Explorer options
 :: - ==============================
 if exist "%~dp0settings\settings-explorer.bat" call "%~dp0settings\settings-explorer.bat"
+
 
 :: - Console settings
 ::  Meanings of keys: https://blogs.msdn.microsoft.com/commandline/2017/06/20/understanding-windows-console-host-settings/
 :: - ==============================
 if exist "%~dp0settings\settings-cmd.bat" call "%~dp0settings\settings-cmd.bat"
 
+
 :: - other settings
 :: - ==============================
 :: -- Don't replace Command Prompt with Windows PowerShell in the menu when I right-click the start button or press Windows key+X.
 call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DontUsePowerShellOnWinX" /t REG_DWORD /d 1 /f
+
 :: -- Disable UAC
 ::  Range   Default value
 ::  0 | 1   1
 call admrun reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f
+
 :: -- Turn On or Off Windows SmartScreen
 ::  Range   Default value
 ::  0 | 1   1
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System" /v "EnableSmartScreen" /t REG_DWORD /d 0 /f
+
 :: -- Turn On or Off SmartScreen for Apps and Files
 ::  Range   REG_SZ  Default value
 ::  Block   REG_SZ  Blocks any unrecognized app from running
 ::  Warn    REG_SZ  Warn before running an unrecognized app
 ::  Off     REG_SZ  Don't do anything
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "SmartScreenEnabled" /t REG_SZ /d "Off" /f
+
 :: -- Turn On or Off SmartScreen for MicrosoftEdge
 ::  Range   Default value
 ::  0 | 1   1
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter" /v "EnabledV9" /t REG_DWORD /d 0 /f
+
 :: -- Turn On or Off SmartScreen for Internet Explorer
 ::  Range   Default value
 ::  0 | 1   1
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\PhishingFilter" /v "EnabledV9" /t REG_DWORD /d 0 /f
+
 
 :: -- ==========================================================================
 :: -- GITHUB
@@ -116,9 +128,12 @@ call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Phi
 :: - ==============================
 call :mSetupGithubConfigs
 
+
 popd >nul
 ENDLOCAL
 EXIT/B
+
+
 
 :: -- ==========================================================================
 :mSetupGithubConfigs -- Helping generate ssh key for github
