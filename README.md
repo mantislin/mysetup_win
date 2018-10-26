@@ -11,6 +11,6 @@ done).Use small icon in taskbar
 ).Power plan settings
 ).Time displaying format
 done).Turn off quick start
-).Turn on hibernate
+done).Enable hibernate
 done).Low down "User Action Control" level
 ).Use peek to preview desktop
