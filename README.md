@@ -7,9 +7,10 @@ done).Hide Navigation Panel
 ).Disable "Store my activity history on this device"
 ).Edge black theme
 done).Dont show people in taskbar
-).Use small icon in taskbar
+done).Use small icon in taskbar
 ).Power plan settings
 ).Time displaying format
 ).Turn off quick start
 ).Turn on hibernate
 done).Low down "User Action Control" level
+).Use peek to preview desktop

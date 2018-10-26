@@ -37,6 +37,13 @@ call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion
 ::  0 | 1   1
 call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f
 
+:: -- Windows 10 File Explorer open "This PC" by default
+::  Range   Default value
+::  1 | 2   2
+::  1 = This PC
+::  2 = Quick access
+call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "LaunchTo" /t REG_DWORD /d 1 /f
+
 :: -- Restore last opened folders
 ::  Range   Default value
 ::  0 | 1   0
@@ -45,12 +52,12 @@ call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion
 :: -- check "Launch folder windows in a separate process"
 call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "SeparateProcess" /t REG_DWORD /d 1 /f
 
-:: -- Windows 10 File Explorer open "This PC" by default
+:: -- Set to Use Large or Small Taskbar Buttons
 ::  Range   Default value
-::  1 | 2   2
-::  1 = This PC
-::  2 = Quick access
-call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "LaunchTo" /t REG_DWORD /d 1 /f
+::  0 | 1   0
+::  0 = Large taskbar buttons
+::  1 = Small taskbar buttons
+call admrun reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSmallIcons" /t REG_DWORD /d 1 /f
 
 :: -- Stop appending " - Shortcut" to Shortcut file names
 call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "link" /t REG_BINARY /d 0 /f
