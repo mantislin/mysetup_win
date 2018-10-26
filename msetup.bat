@@ -120,6 +120,13 @@ call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdg
 ::  0 | 1   1
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\PhishingFilter" /v "EnabledV9" /t REG_DWORD /d 0 /f
 
+:: -- Turn On or Off Fast Startup
+::  Range   Default value
+::  0 | 1   1
+::  0 = Turn off fast startup
+::  1 = Turn on fast startup
+call admrun reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v "HiberbootEnabled" /t REG_DWORD /d 0 /f
+
 
 :: -- ==========================================================================
 :: -- GITHUB

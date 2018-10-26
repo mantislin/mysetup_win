@@ -10,7 +10,7 @@ done).Dont show people in taskbar
 done).Use small icon in taskbar
 ).Power plan settings
 ).Time displaying format
-).Turn off quick start
+done).Turn off quick start
 ).Turn on hibernate
 done).Low down "User Action Control" level
 ).Use peek to preview desktop
