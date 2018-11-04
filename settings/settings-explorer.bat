@@ -74,6 +74,7 @@ call admrun reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion
 ::::  Range   Default value
 ::::  0 | 1   0
 ::call admrun reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoClose" /t REG_DWORD /d 0 /f
+
 :: -- Allow system to be shut down without having to log on
 ::  Range   Default value
 ::  0 | 1   1
@@ -91,13 +92,6 @@ call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Expl
 ::  Range   Default value
 ::  0 | 1   0
 call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization" /v "NoLockScreen" /t REG_DWORD /d 0 /f
-
-:: -- Enable or Disable Hibernate
-::  Range   Default value
-::  0 | 1   0
-::  0 = Enable
-::  1 = Disable
-call admrun reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power" /v "HibernateEnabled" /t REG_DWORD /d 1 /f
 
 :: -- Disable Navigation Pane
 ::  win7off     PageSpaceControlSizer    REG_BINARY    c80000000000000000000000d7030000

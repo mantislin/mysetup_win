@@ -127,6 +127,13 @@ call admrun reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Phi
 ::  1 = Turn on fast startup
 call admrun reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v "HiberbootEnabled" /t REG_DWORD /d 0 /f
 
+:: -- Enable or Disable Hibernate
+::  Range   Default value
+::  0 | 1   0
+::  0 = Disable
+::  1 = Enable
+call admrun reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power" /v "HibernateEnabled" /t REG_DWORD /d 1 /f
+
 
 :: -- ==========================================================================
 :: -- GITHUB
